@@ -150,24 +150,22 @@ a:hover { text-decoration-color: currentColor; }
 
 /* chapter three: two planes in one frame, copy never over them */
 .layers { max-width: 620px; }
-.layers__frame { position: relative; overflow: hidden; aspect-ratio: 4 / 5; box-shadow: 0 0 0 1px var(--gold); }
-.layers__bed { position: absolute; inset: -80px 0; will-change: transform; }
-.layers__bed img { width: 100%; height: 100%; object-fit: cover; max-width: none; filter: saturate(.7) brightness(.85); }
-.layers__tint { position: absolute; inset: 0; background: var(--pod); mix-blend-mode: multiply; opacity: .55; pointer-events: none; }
-.layers__front { position: absolute; left: 16%; right: 16%; top: 20%; will-change: transform; }
-.layers__front img { width: 100%; height: auto; filter: drop-shadow(0 12px 20px rgba(20,16,12,.35)); }
+.layers__frame { position: relative; aspect-ratio: 1 / 1; }
+.layers__shadow { position: absolute; left: 6%; right: 6%; top: 30%; bottom: 4%; border-radius: 50%; background: radial-gradient(closest-side, rgba(0,0,0,.55), rgba(0,0,0,0)); will-change: transform; }
+.layers__front { position: absolute; inset: 0; will-change: transform; }
+.layers__front img { width: 100%; height: auto; }
 [data-sc-parallax] { transition: none; }
 
 /* chapter four: the clip, then the three tins at their real relative scale on one shelf
    (the tube is 19cm, the bottle 11cm, the tin 6cm) */
 .tins li + li { margin-top: var(--s2); }
 .tins-media { display: grid; grid-template-columns: 1fr; row-gap: var(--s2); }
-.cutouts { display: flex; align-items: flex-end; gap: var(--s6); height: 440px; padding-left: var(--s2); }
+.cutouts { display: flex; align-items: flex-end; gap: var(--s6); height: 600px; padding-left: var(--s2); }
 .cutout { height: 100%; display: flex; align-items: flex-end; }
 .cutout picture, .cutout img { height: 100%; width: auto; max-width: none; }
-.cutout--pods    { height: 440px; }
-.cutout--extract { height: 256px; }
-.cutout--powder  { height: 140px; }
+.cutout--pods    { height: 600px; }
+.cutout--extract { height: 352px; }
+.cutout--powder  { height: 192px; }
 
 /* intertitle: the silence. Vertically centred, still ranged left. */
 .intertitle { min-height: 80svh; display: grid; align-content: center; padding-inline: var(--gutter); }
@@ -245,6 +243,8 @@ a:hover { text-decoration-color: currentColor; }
   margin-left: -8px;
 }
 .vine__node:hover .vine__label, .vine__node:focus-visible .vine__label, .vine__node[aria-current] .vine__label { opacity: 1; }
+.vine__node[aria-current] .vine__label--quiet { opacity: 0; }
+.vine__node:hover .vine__label--quiet, .vine__node:focus-visible .vine__label--quiet { opacity: 1; }
 .vine__node:focus-visible { outline: 2px solid var(--vine-ink, #000); outline-offset: 0; border-radius: var(--radius); }
 
 /* --------------------------------------------------------------- dialog -- */
@@ -302,10 +302,10 @@ a:hover { text-decoration-color: currentColor; }
   .peak__stage .peak__poster, .peak__stage video[data-sc-scrub] { object-position: center bottom; }
   .peak__copy { left: 8px; right: 24px; top: 24px; transform: none; width: auto; display: grid; }
   .peak__copy > * { grid-area: 1 / 1; margin-top: 0; align-self: start; }
-  .cutouts { gap: var(--s4); height: 320px; padding-left: 0; }
-  .cutout--pods { height: 320px; }
-  .cutout--extract { height: 184px; }
-  .cutout--powder { height: 100px; }
+  .cutouts { gap: var(--s3); height: 400px; padding-left: 0; }
+  .cutout--pods { height: 400px; }
+  .cutout--extract { height: 232px; }
+  .cutout--powder { height: 128px; }
 }
 
 /* --------------------------------------------------------- reduced motion -- */
