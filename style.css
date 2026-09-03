@@ -1,56 +1,99 @@
-/* Sturdy Vanilla — minimal, self-contained. No external fonts, no trackers. */
+/* Sturdy Vanilla — the design system, on the web.
+   Aligned 2026-09-03 to sturdyvanilla/sturdy-vanilla-design-system.
+   Palette, face, scale and rules all come from there; nothing is invented here.
+
+   Web scale is 40 / 20, plus 16 for captions and legal — the one place a third
+   size is allowed, because on a web viewport 16px really is 16px. On a card it
+   would render at 8px, which is why cards get two sizes and no more.
+   The big one is always double the small one. */
 :root {
-  --ink: #1a1410;
-  --paper: #faf6ef;
-  --muted: #6b5f52;
-  --rule: #e3d9c8;
-  --accent: #8a6d3b;
+  --ink:        #14100C;   /* surface only, never type */
+  --paper:      #EFE9D8;
+  --raised:     #F7F1E1;
+  --text:       #000000;   /* 17.3:1 on paper */
+  --text-2:     #4A3527;   /* pod brown. 9.5:1 — the secondary text colour */
+  --gold:       #C4A46A;   /* rules, borders, markers. NEVER type */
+  --rule:       rgba(20,16,12,.14);
+
+  --lg:  40px;
+  --sm:  20px;
+  --cap: 16px;             /* captions and legal. Web only. */
+
+  --face: "Fraunces", "Hoefler Text", Georgia, serif;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --ink: #f2ebe0;
-    --paper: #14100c;
-    --muted: #a2968a;
-    --rule: #2e261d;
-    --accent: #c9a568;
+    --paper:  #14100C;
+    --raised: #1E1811;
+    --text:   #FFFFFF;
+    --text-2: #E4D6BF;
+    --rule:   rgba(247,241,225,.18);
   }
+  /* Reversed out on ink, type goes to 500 — same apparent weight as 400 on
+     paper, not emphasis. WCAG 2 ignores stroke weight, so the ratio flatters
+     us and the weight is the actual fix. */
+  body, p, li, td { font-weight: 500; }
 }
-* { box-sizing: border-box; }
+
+* { box-sizing: border-box; font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 0, "WONK" 0; }
+
 body {
   margin: 0;
   background: var(--paper);
-  color: var(--ink);
-  font: 16px/1.65 Georgia, "Iowan Old Style", "Times New Roman", serif;
+  color: var(--text);
+  font-family: var(--face);
+  font-size: var(--sm);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: .02em;          /* Zorzi et al., PNAS 2012 */
   -webkit-text-size-adjust: 100%;
 }
-.wrap { max-width: 42rem; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+
+.wrap { max-width: 34rem; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+/* 34rem at 20px lands near 55 characters — Dyson & Haselgrove 2001. */
+
 header { border-bottom: 1px solid var(--rule); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+
+/* The label device: caps + tracking at the small size. Four words maximum. */
 .brand {
-  font-size: 1.05rem; letter-spacing: .22em; text-transform: uppercase;
-  font-family: ui-sans-serif, -apple-system, "Helvetica Neue", sans-serif;
-  font-weight: 600; margin: 0; color: var(--ink); text-decoration: none;
+  font-size: var(--cap); letter-spacing: .22em; text-transform: uppercase;
+  font-weight: 600; margin: 0; color: var(--text); text-decoration: none;
 }
-.tag { color: var(--muted); font-style: italic; margin: .4rem 0 0; font-size: .95rem; }
-h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 .4rem; font-weight: 600; }
-h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; font-weight: 600; }
-.updated { color: var(--muted); font-size: .85rem; margin: 0 0 2.5rem;
-  font-family: ui-sans-serif, -apple-system, sans-serif; }
-p, li { color: var(--ink); }
+.tag { color: var(--text-2); margin: .4rem 0 0; font-size: var(--sm); }
+
+h1 { font-size: var(--lg); line-height: 1.15; margin: 0 0 .4rem; font-weight: 400; }
+h2 { font-size: var(--sm); margin: 2.4rem 0 .6rem; font-weight: 600; }
+
+p, li { color: var(--text); }
 li { margin-bottom: .4rem; }
-a { color: var(--accent); text-underline-offset: 2px; }
-.lede { font-size: 1.1rem; color: var(--muted); }
-nav { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule);
-  font-family: ui-sans-serif, -apple-system, sans-serif; font-size: .85rem; }
+.lede { color: var(--text-2); }
+
+/* Links keep their underline. Colour alone cannot carry meaning (WCAG 1.4.1),
+   and gold is never type — so a link is ink, underlined. This is the one place
+   the no-underline rule does not apply: that rule is about emphasis, not
+   affordance. */
+a { color: var(--text); text-decoration: underline; text-underline-offset: 2px;
+    text-decoration-thickness: 1px; text-decoration-color: var(--gold); }
+a:hover { text-decoration-color: var(--text); }
+
+.updated, nav, th, .fine { font-size: var(--cap); }
+.updated { color: var(--text-2); margin: 0 0 2.5rem; }
+
+nav { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
 nav a { margin-right: 1.25rem; }
+
 .shop {
   display: inline-block; margin-top: 1.5rem; padding: .7rem 1.4rem;
-  background: var(--ink); color: var(--paper); text-decoration: none;
-  font-family: ui-sans-serif, -apple-system, sans-serif; font-size: .85rem;
-  letter-spacing: .1em; text-transform: uppercase; border-radius: 2px;
+  background: var(--ink); color: #FFFFFF; font-weight: 500;
+  text-decoration: none; font-size: var(--cap);
+  letter-spacing: .1em; text-transform: uppercase; border-radius: 4px;
 }
-table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .92rem; }
+@media (prefers-color-scheme: dark) { .shop { background: var(--paper); color: #000; } }
+
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: var(--cap); }
 th, td { text-align: left; padding: .55rem .6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
-th { font-family: ui-sans-serif, -apple-system, sans-serif; font-size: .78rem;
-  text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
-.note { border-left: 2px solid var(--accent); padding: .1rem 0 .1rem 1rem;
-  margin: 1.5rem 0; color: var(--muted); }
+th { text-transform: uppercase; letter-spacing: .06em; color: var(--text-2); font-weight: 600; }
+
+.note { border-left: 2px solid var(--gold); padding: .1rem 0 .1rem 1rem;
+        margin: 1.5rem 0; color: var(--text-2); }
