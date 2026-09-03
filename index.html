@@ -2,47 +2,201 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sturdy Vanilla — Ugandan vanilla, direct from a family estate</title>
-<meta name="description" content="Sturdy Vanilla sells Ndali vanilla pods, extract and powder in the UK, grown on a family estate in Uganda.">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&display=swap">
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sturdy Vanilla</title>
+<meta name="description" content="Ndali vanilla, grown by my aunt in Uganda. Pods, extract and powder from a family estate near Fort Portal, sold direct in the UK on TikTok Shop.">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sturdy Vanilla">
+<meta property="og:description" content="Ndali vanilla, grown by my aunt in Uganda. Pods, extract and powder, sold direct in the UK on TikTok Shop.">
+<meta property="og:image" content="https://sturdyvanilla.github.io/sturdy-vanilla-site/assets/img/og-1200x630.jpg">
+<meta property="og:url" content="https://sturdyvanilla.github.io/sturdy-vanilla-site/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="assets/fonts/Fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fraunces.css">
+<link rel="stylesheet" href="scrollcraft.css">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <a class="brand" href="index.html">Sturdy Vanilla</a>
-    <p class="tag">Ugandan vanilla, direct from a family estate</p>
-  </header>
 
-  <h1>Real vanilla, from people we know.</h1>
-  <p class="lede">
-    We sell Ndali vanilla — pods, extract and powder — grown on a family estate
-    in Uganda and sold direct in the UK. No brokers, no re-bottling, and nothing
-    synthetic anywhere near it.
-  </p>
+<a class="skip" href="#main">Skip to content</a>
+<div class="sc-grain" aria-hidden="true"></div>
 
-  <p>
-    Vanilla is a climbing orchid. Every flower is pollinated by hand, and every pod
-    takes about nine months to grow and cure. That is why real vanilla costs what it
-    costs, and why most of what is sold as &ldquo;vanilla&rdquo; in a supermarket has
-    never been near the plant.
-  </p>
+<!-- The signature move. A vanilla vine drawn by the scroll, one node per chapter.
+     Page JS + inline SVG only; the engine never touches this element. -->
+<nav class="vine" aria-label="Chapters">
+  <svg class="vine__svg" aria-hidden="true" focusable="false" preserveAspectRatio="none">
+    <path class="vine__stem" d="M0 0" pathLength="1000"></path>
+    <g class="vine__leaves"></g>
+  </svg>
+  <ol class="vine__nodes">
+    <li><a class="vine__node vine__node--leaf" href="#top" data-target="#top" data-place="title"><span class="vine__glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C5 7 5 17 12 22c7-5 7-15 0-20z"/><path class="rib" d="M12 5v14"/></svg></span><span class="vine__label">Title page</span></a></li>
+    <li><a class="vine__node vine__node--leaf" href="#ch-farm" data-target="#ch-farm"><span class="vine__glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C5 7 5 17 12 22c7-5 7-15 0-20z"/><path class="rib" d="M12 5v14"/></svg></span><span class="vine__label">Chapter one · The farm</span></a></li>
+    <li><a class="vine__node vine__node--leaf" href="#ch-fairtrade" data-target="#ch-fairtrade"><span class="vine__glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C5 7 5 17 12 22c7-5 7-15 0-20z"/><path class="rib" d="M12 5v14"/></svg></span><span class="vine__label">Chapter two · Fairtrade</span></a></li>
+    <li><a class="vine__node vine__node--flower" href="#ch-plant" data-target="#ch-plant"><span class="vine__glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><g class="petals"><ellipse cx="12" cy="6" rx="3" ry="5.5"/><ellipse cx="12" cy="6" rx="3" ry="5.5" transform="rotate(72 12 12)"/><ellipse cx="12" cy="6" rx="3" ry="5.5" transform="rotate(144 12 12)"/><ellipse cx="12" cy="6" rx="3" ry="5.5" transform="rotate(216 12 12)"/><ellipse cx="12" cy="6" rx="3" ry="5.5" transform="rotate(288 12 12)"/></g><circle class="eye" cx="12" cy="12" r="2.4"/></svg></span><span class="vine__label">Chapter three · The plant</span></a></li>
+    <li><a class="vine__node vine__node--leaf" href="#ch-tins" data-target="#ch-tins"><span class="vine__glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C5 7 5 17 12 22c7-5 7-15 0-20z"/><path class="rib" d="M12 5v14"/></svg></span><span class="vine__label">Chapter four · The tins</span></a></li>
+    <li><a class="vine__node vine__node--leaf vine__node--quiet" href="#ch-silence" data-target="#ch-silence"><span class="vine__glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C5 7 5 17 12 22c7-5 7-15 0-20z"/><path class="rib" d="M12 5v14"/></svg></span><span class="vine__label">Chapter five</span></a></li>
+    <li><a class="vine__node vine__node--flower vine__node--peak" href="#ch-school" data-target="#ch-school" data-place="peak"><span class="vine__glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><g class="petals"><ellipse cx="12" cy="6" rx="3" ry="5.5"/><ellipse cx="12" cy="6" rx="3" ry="5.5" transform="rotate(72 12 12)"/><ellipse cx="12" cy="6" rx="3" ry="5.5" transform="rotate(144 12 12)"/><ellipse cx="12" cy="6" rx="3" ry="5.5" transform="rotate(216 12 12)"/><ellipse cx="12" cy="6" rx="3" ry="5.5" transform="rotate(288 12 12)"/></g><circle class="eye" cx="12" cy="12" r="2.4"/></svg></span><span class="vine__label">The school</span></a></li>
+    <li><a class="vine__node vine__node--pod" href="#ch-shop" data-target="#shop-button" data-place="pod"><span class="vine__glyph" aria-hidden="true"><svg viewBox="0 0 12 48"><path d="M6 1C3.2 8 3.2 40 6 47c2.8-7 2.8-39 0-46z"/></svg></span><span class="vine__label">Shop on TikTok</span></a></li>
+  </ol>
+</nav>
 
-  <a class="shop" href="https://www.tiktok.com/@sturdyvanilla">Shop on TikTok</a>
+<main id="main">
 
-  <h2>Get in touch</h2>
-  <p>
-    Trade enquiries, stockists and press:
-    <a href="mailto:joe@sturdy.vip">joe@sturdy.vip</a>
-  </p>
+  <!-- 0 · Title page. Type on paper, no media above the fold. -->
+  <section id="top" class="act act--title g-a" data-sc-act="flow">
+    <div class="title">
+      <p class="label title__brand">Sturdy Vanilla</p>
+      <div class="title__body stack" data-sc-in data-sc-stagger="70">
+        <h1 class="display">Grown by my aunt in Uganda.</h1>
+        <p class="standfirst">Ndali vanilla, from a family estate in western Uganda. Pods, extract and powder, cured on the farm and sold direct in the UK.</p>
+        <p class="title__cta"><a href="https://www.tiktok.com/@sturdyvanilla">Shop on TikTok</a></p>
+        <p class="caption title__byline">Joe Sturdy, Frome, Somerset</p>
+      </div>
+    </div>
+  </section>
 
-  <nav>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-    <a href="https://www.tiktok.com/@sturdyvanilla">TikTok</a>
-  </nav>
-</div>
+  <!-- 1 · Chapter one. The farm. Ink, split, a wipe at the chapter boundary. -->
+  <section id="ch-farm" class="act chapter g-b" data-sc-act="flow">
+    <div class="spread spread--split">
+      <div class="copy stack" data-sc-in data-sc-stagger="70">
+        <h2 class="display">The soil said no to tea.</h2>
+        <p>My great-grandfather bought Ndali in the early sixties to grow tea. The soil was too alkaline, and the land sat wild for about thirty years. In 1998 my aunt, Lulu Sturdy, took it on. She tried pyrethrum, chillies, rice and coffee before she landed on vanilla, and the first pods were cured on the estate in 1999.</p>
+        <p>Nine hundred of the estate's thousand acres are forest again. The vanilla grows underneath it.</p>
+      </div>
+      <figure class="media media--bundle" data-sc-reveal="up" data-sc-reveal-at="0.16 0.58">
+        <img class="plate" src="assets/img/ch1-pods-bundle.jpg" width="780" height="720" alt="A bundle of cured Ndali vanilla pods, near black, tied with pale twine.">
+        <figcaption>Cured Ndali pods, tied for grading.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 2 · Chapter two. Fairtrade. Cream, trail, real figures ticking on entry. No act, so the counters fire once. -->
+  <section id="ch-fairtrade" class="act chapter g-a">
+    <div class="spread spread--trail">
+      <div class="copy stack" data-sc-in data-sc-stagger="70">
+        <h2 class="display">What the premium actually bought.</h2>
+        <p>In 2005 the Rwenzori Vanilla Farmers became the first Fairtrade vanilla organisation in Africa. Around <span class="num" data-sc-count="0 2,000">2,000</span> farming families sell into it.</p>
+        <p>The premium has paid for 9 acres of land, a pharmacy, a school roofing project, a maize mill, beekeeping projects, educational scholarships and grants for medical operations.</p>
+      </div>
+      <aside class="media quote" data-sc-in>
+        <blockquote>
+          <p>When we receive the fair trade price for our vanilla, we receive 100% of that money for our work, and we have 100% control over how to use it.</p>
+        </blockquote>
+        <p class="caption">Joseph Mbusa, Chairman, Rwenzori Farmers Union.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 3 · Chapter three. The plant. Ink, lead, two layers in the media column. -->
+  <section id="ch-plant" class="act chapter g-b" data-sc-act="flow">
+    <div class="spread spread--lead">
+      <div class="copy stack" data-sc-in data-sc-stagger="70">
+        <h2 class="display">Vanilla is an orchid, and it will not pollinate itself.</h2>
+        <p>Every flower is opened by hand with a pin or a whittled stick, within 8 hours of it opening, or it sets nothing. There is no machine for this anywhere in the world.</p>
+        <p>The pod then stays on the vine for nine to eleven months. It is the second most expensive spice on earth after saffron, and the hand work is why. A Ndali pod weighs 7.5g. A supermarket pod weighs 2 to 3g.</p>
+      </div>
+      <figure class="media layers">
+        <div class="layers__frame">
+          <div class="layers__bed" data-sc-parallax="-0.8">
+            <img src="assets/img/ch3-bed.jpg" width="1400" height="1400" alt="Cured vanilla pods lying on a board beside their paper wrapper.">
+          </div>
+          <div class="layers__tint" aria-hidden="true"></div>
+          <div class="layers__front" data-sc-parallax="0.3">
+            <picture><source srcset="assets/img/ch3-spilt.webp" type="image/webp"><img src="assets/img/ch3-spilt.png" width="1400" height="1400" alt="A tin of Ndali vanilla powder on its side, the ground vanilla spilling out of it."></picture>
+          </div>
+        </div>
+        <figcaption>One 13g tin is six pods.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 4 · Chapter four. The tins. Cream, trail, the real footage and three cut-outs. -->
+  <section id="ch-tins" class="act chapter g-a" data-sc-act="flow">
+    <div class="spread spread--trail">
+      <div class="copy stack" data-sc-in data-sc-stagger="70">
+        <h2 class="display">Three forms of one thing.</h2>
+        <p>Pods, extract and powder, all from the same estate, all cured and milled on the farm. Nothing is shipped out green to be processed somewhere else. 100% vanilla, organic, Fairtrade, single estate.</p>
+        <ul class="tins">
+          <li>
+            <p><a href="https://www.tiktok.com/view/product/1729646031859653275?region=GB&amp;locale=en-GB">Intense Ndali vanilla extract</a>, 100ml. Made on the farm. <span class="price">£13.99</span></p>
+          </li>
+          <li>
+            <p><a href="https://www.tiktok.com/view/product/1729692405205015195?region=GB&amp;locale=en-GB">Ndali vanilla powder</a>, 13g. One tin is six pods. <span class="price">£10.99</span></p>
+          </li>
+          <li>
+            <p><a href="https://www.tiktok.com/view/product/1729692389694610075?region=GB&amp;locale=en-GB">Two intense Ndali pods</a>, 7.5g each. <span class="price">£9.99</span></p>
+          </li>
+        </ul>
+        <p class="caption">Every tin is recyclable aluminium. <a href="https://www.tiktok.com/@sturdyvanilla">Shop on TikTok</a>.</p>
+      </div>
+      <div class="media tins-media">
+        <div class="cutouts" role="img" aria-label="The three tins side by side: the pods tube, the extract bottle and the powder tin.">
+          <figure class="cutout cutout--extract" data-sc-reveal="up" data-sc-reveal-at="0.14 0.40"><picture><source srcset="assets/img/tin-extract.webp" type="image/webp"><img src="assets/img/tin-extract.png" alt=""></picture></figure>
+          <figure class="cutout cutout--powder" data-sc-reveal="up" data-sc-reveal-at="0.26 0.52"><picture><source srcset="assets/img/tin-powder.webp" type="image/webp"><img src="assets/img/tin-powder.png" alt=""></picture></figure>
+          <figure class="cutout cutout--pods" data-sc-reveal="up" data-sc-reveal-at="0.38 0.64"><picture><source srcset="assets/img/tin-pods.webp" type="image/webp"><img src="assets/img/tin-pods.png" alt=""></picture></figure>
+        </div>
+        <p class="caption">The three tins, to scale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · Intertitle. The authored silence before the peak. -->
+  <section id="ch-silence" class="act intertitle g-a">
+    <p class="display intertitle__line">Chapter five<br>The school</p>
+  </section>
+
+  <!-- 6 · Chapter five. The school. The peak: hard cut to ink, the one scrub clip, 93 landing. -->
+  <section id="ch-school" class="act chapter peak g-b" data-sc-act="scrub" data-sc-span="3.2" data-sc-dwell="0.3">
+    <div data-sc-stage class="peak__stage">
+      <img class="sc-stage__poster peak__poster" src="assets/img/ch6-school-ink-poster.jpg" alt="">
+      <video class="peak__clip" data-sc-scrub data-sc-src="assets/video/ch6-school-ink.mp4" data-sc-src-mobile="assets/video/ch6-school-ink-p.mp4" muted playsinline aria-label="Ninety-three marks rise and settle into rows, one for each child at the school."></video>
+      <div class="peak__copy stack">
+        <h2 class="display" data-sc-cue="0 1 0 0.08" data-sc-cue-m="0 0.22 0">In January 2017 a school opened on the estate.</h2>
+        <p data-sc-cue="0.16 1 0.3 0.1" data-sc-cue-m="0.2 0.4"><span class="num" data-sc-count="0 93" data-sc-count-at="0.16 0.4" data-sc-count-at-m="0.2 0.34">93</span> children, aged three to ten, from the poorest families in the district.</p>
+        <p data-sc-cue="0.32 1 0.3 0.14" data-sc-cue-m="0.38 0.58">Montessori and Cambridge, and yoga every day. My aunt co-founded it with Clare Murumba Price. It is the only school of its kind in East Africa.</p>
+        <div class="peak__close" data-sc-cue="0.46 1 0.15 0.2" data-sc-cue-m="0.55 1 0.2 0.22">
+          <p class="peak__line">The vanilla is what pays for it. The tin you buy is part of that.</p>
+          <p class="caption peak__caption">Sadhguru School, Fort Portal. Not-for-profit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · Colophon. Cream, holds. Footer inside, nothing after it. -->
+  <section id="ch-shop" class="act colophon g-a" data-sc-act="flow">
+    <div class="spread spread--split colophon__spread">
+      <div class="copy stack" data-sc-in data-sc-stagger="60">
+        <p class="label">Sturdy Vanilla</p>
+        <h2 class="display">Sturdy Vanilla presents Ndali pods, extract and powder, grown by my aunt in Uganda.</h2>
+        <p>Everything is on TikTok Shop. <a href="https://www.tiktok.com/view/product/1729692389694610075?region=GB&amp;locale=en-GB">2 Intense Ndali Vanilla Pods</a>, £9.99. <a href="https://www.tiktok.com/view/product/1729692405205015195?region=GB&amp;locale=en-GB">13g Ndali Vanilla Powder</a>, £10.99. <a href="https://www.tiktok.com/view/product/1729646031859653275?region=GB&amp;locale=en-GB">100ml Ndali Vanilla Extract</a>, £13.99. All in recyclable aluminium.</p>
+        <p class="colophon__cta"><a id="shop-button" class="button" href="https://www.tiktok.com/@sturdyvanilla">Shop on TikTok</a></p>
+      </div>
+      <aside class="media colophon__aside stack" data-sc-in data-sc-stagger="60">
+        <p class="caption">Trade, stockists and press: <a href="mailto:joe@sturdy.vip">joe@sturdy.vip</a><br>WhatsApp <a href="https://wa.me/447785764880">+44 7785 764880</a><br>TikTok <a href="https://www.tiktok.com/@sturdyvanilla">@sturdyvanilla</a></p>
+      </aside>
+    </div>
+    <footer class="foot">
+      <img class="fhrs" src="assets/img/fhrs-5.svg" width="259" height="144" alt="Food Hygiene Rating five, very good.">
+      <p class="caption">Joe Sturdy, Sturdy Vanilla, Frome, Somerset, United Kingdom. <a href="privacy.html" data-legal="privacy">Privacy</a> · <a href="terms.html" data-legal="terms">Terms</a></p>
+    </footer>
+  </section>
+
+</main>
+
+<!-- The small print, on the back of the tin. Progressive: the links go to the real pages without JS. -->
+<dialog id="legal" class="legal" aria-labelledby="legal-title">
+  <div class="legal__panel">
+    <div class="legal__bar">
+      <p class="label">The small print</p>
+      <button class="legal__close" type="button" autofocus>Close</button>
+    </div>
+    <div class="legal__doc" id="legal-doc"></div>
+  </div>
+</dialog>
+
+<script src="scrollcraft.js"></script>
+<script src="site.js"></script>
 </body>
 </html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /device-diag.html
+Sitemap: https://sturdyvanilla.github.io/sturdy-vanilla-site/sitemap.xml

@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Fraunces";
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url("Fraunces-var.woff2") format("woff2-variations"),
+    url("Fraunces-var.ttf") format("truetype-variations");
+}

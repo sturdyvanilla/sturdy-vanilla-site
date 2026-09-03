@@ -32,11 +32,11 @@
   /* Reversed out on ink, type goes to 500 — same apparent weight as 400 on
      paper, not emphasis. WCAG 2 ignores stroke weight, so the ratio flatters
      us and the weight is the actual fix. */
-  body, p, li, td { font-weight: 500; }
+  body, p, li, td, h1, h2 { font-weight: 500; }
 }
 
 * { box-sizing: border-box; font-optical-sizing: auto;
-    font-variation-settings: "SOFT" 0, "WONK" 0; }
+    font-variation-settings: "opsz" 20, "SOFT" 0, "WONK" 0; }
 
 body {
   margin: 0;
@@ -62,7 +62,7 @@ header { border-bottom: 1px solid var(--rule); padding-bottom: 1.5rem; margin-bo
 }
 .tag { color: var(--text-2); margin: .4rem 0 0; font-size: var(--sm); }
 
-h1 { font-size: var(--lg); line-height: 1.15; margin: 0 0 .4rem; font-weight: 400; }
+h1 { font-size: var(--lg); line-height: 1.15; margin: 0 0 .4rem; font-weight: 400; font-variation-settings: "opsz" 40, "SOFT" 0, "WONK" 0; }
 h2 { font-size: var(--sm); margin: 2.4rem 0 .6rem; font-weight: 600; }
 
 p, li { color: var(--text); }
@@ -77,7 +77,7 @@ a { color: var(--text); text-decoration: underline; text-underline-offset: 2px;
     text-decoration-thickness: 1px; text-decoration-color: var(--gold); }
 a:hover { text-decoration-color: var(--text); }
 
-.updated, nav, th, .fine { font-size: var(--cap); }
+.updated, nav, th, .fine { font-size: var(--cap); font-variation-settings: "opsz" 16, "SOFT" 0, "WONK" 0; }
 .updated { color: var(--text-2); margin: 0 0 2.5rem; }
 
 nav { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
@@ -95,5 +95,5 @@ table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: var(-
 th, td { text-align: left; padding: .55rem .6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
 th { text-transform: uppercase; letter-spacing: .06em; color: var(--text-2); font-weight: 600; }
 
-.note { border-left: 2px solid var(--gold); padding: .1rem 0 .1rem 1rem;
+.note { border-left: 1px solid var(--gold); padding: .1rem 0 .1rem 1rem;
         margin: 1.5rem 0; color: var(--text-2); }
