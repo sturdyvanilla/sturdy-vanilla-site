@@ -191,6 +191,8 @@ a:hover { text-decoration-color: currentColor; }
 .colophon { min-height: 100svh; display: grid; grid-template-rows: 1fr auto; padding-top: clamp(64px, 14vh, 136px); }
 .colophon__spread { align-items: end; }
 .colophon__aside { max-width: 30rem; }
+.social { display: inline-flex; align-items: center; gap: 6px; }
+.social .icon { width: 18px; height: 18px; flex: none; }
 .foot { display: flex; align-items: center; gap: var(--s4); flex-wrap: wrap; }
 .foot .fhrs { width: 96px; height: auto; flex: none; }
 .foot .caption { max-width: none; }
