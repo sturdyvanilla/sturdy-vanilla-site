@@ -191,8 +191,11 @@ a:hover { text-decoration-color: currentColor; }
 .colophon { min-height: 100svh; display: grid; grid-template-rows: 1fr auto; padding-top: clamp(64px, 14vh, 136px); }
 .colophon__spread { align-items: end; }
 .colophon__aside { max-width: 30rem; }
-.social { display: inline-flex; align-items: center; gap: 6px; }
+.social { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
 .social .icon { width: 18px; height: 18px; flex: none; }
+/* a Shop link and, beside it, the handle: the short link opens the app on a phone but is an
+   app-scheme redirect a laptop cannot follow, so the profile link is the fallback that works everywhere */
+.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2) var(--s3); }
 .foot { display: flex; align-items: center; gap: var(--s4); flex-wrap: wrap; }
 .foot .fhrs { width: 96px; height: auto; flex: none; }
 .foot .caption { max-width: none; }
